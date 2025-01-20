@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>largest number of three</h1>
+    <script>
+        let num1 = parseFloat(prompt("enter the first number"));
+        let num2 = parseFloat(prompt("enter the second number"));
+        let num3 = parseFloat(prompt("enter the third number"));
+
+        if (num1 === num2 && num2 === num3) {
+            alert("All numbers are the same: " + num1);
+        } else {
+
+            let largest = Math.max(num1, num2, num3);
+
+            if ((num1 === largest && num2 === largest) ||
+                (num1 === largest && num3 === largest) ||
+                (num2 === largest && num3 === largest)) {
+                alert("There is a tie for the largest number: " + largest);
+            } else {
+                alert(largest);
+            }
+
+        }
+
+        let people = ["John", "mary", "Joel", "sarah", "Mohammed"]
+        for (let i = 0; i < people.length; i++) {
+            console.log("loop at" + i)
+            console.log(people[i])
+
+        }
+
+    </script>
+</body>
+
+</html>

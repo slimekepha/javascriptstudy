@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function calculateAge(dobString) {
+   
+    const [day, month, year] = dobString.split('/').map(Number);
+
+    const birthDate = new Date(year, month - 1, day); 
+    const today = new Date();
+
+    let years = today.getFullYear() - birthDate.getFullYear();
+    let months = today.getMonth() - birthDate.getMonth();
+    let days = today.getDate() - birthDate.getDate();
+
+    if (days < 0) {
+        months--;
+        days += new Date(today.getFullYear(), today.getMonth(), 0).getDate();
+    }
+
+    if (months < 0) {
+        years--;
+        months += 12;
+    }
+
+    return {
+        years: years,
+        months: months,
+        days: days
+    };
+}
+
+const dateOfBirth = prompt("Enter your date of birth (DD/MM/YYYY):");
+const age = calculateAge(dateOfBirth);
+alert(`Age: ${age.years} years, ${age.months} months, ${age.days} days`);
+
+            
+        
+    </script>
+</body>
+</html>

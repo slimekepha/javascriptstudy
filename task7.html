@@ -6,20 +6,20 @@
     <title>Grading System</title>
 </head>
 <body>
-    <H1>OPIUM SCHOOL GRADING PORTAL</H1>
+    
     <script>
         function gradingmarks(){
             let marks=parseInt(prompt("Enter the marks:"));
             if(marks>79&&marks<=100){
                 alert("A")
             
-            }else if(marks<79&&marks>60){
+            }else if(marks<=79&&marks>=60){
                 alert("B-")
-            }else if(marks<59&&marks>49){
+            }else if(marks<=59&&marks>49){
                 alert("C")
-            }else if(marks<49&&marks>40){
+            }else if(marks<=49&&marks>40){
                 alert("D-")
-            }else if(marks<40&&marks>=0){
+            }else if(marks<=40&&marks>=0){
                 alert("E")
             }else{
                 alert("Invalid marks input")

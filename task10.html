@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let prods = [['omo', '30kshs', '300'], ['milk', '50kshs', '200'], ['bread', '45kshs', '359'], ['coffee', '5kshs', '79']];
+
+function calculateTotalStock(products) {
+    let totalStock = 0;
+    for (let i = 0; i < products.length; i++) {
+        let stock = parseInt(products[i][2]);
+        totalStock += stock;
+    }
+    alert("Total stock: " + totalStock);
+}
+
+calculateTotalStock(prods);
+
+    </script>
+</body>
+</html>

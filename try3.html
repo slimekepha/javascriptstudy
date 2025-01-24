@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let sv = prompt('Enter your Birthday: dd/mm/yyyy ');
+        sv = sv.split('/');
+        let day_ob = parseInt(sv[0]);
+        let month_ob = parseInt(sv[1]);
+        let year_ob = parseInt(sv[2]);
+
+        const today = new Date();
+        let total_years = today.getFullYear() - year_ob;
+        let total_month = today.getMonth() - month_ob;
+        let total_days = today.getDate() - day_ob;
+        let cm=today.getMonth
+        let cy=today.getFullYear
+
+        
+        if (total_years < 0 || total_month>12||total_days>31) {
+            alert("invalid date")
+        }
+
+        
+        
+        else{
+           (total_month < 0)
+           total_years = total_years - 1;
+           total_month = total_month + 12;
+         
+        }
+
+        if(total_days<0){
+            if((cm<8&&cm%2!=0) || (cm>7&&cm%2==0)) {
+                total_days=total_days+31
+                total_month=total_month-1
+            }
+            else if(cm==2&cy%4==0){
+                total_days=total_days+29
+                total_month=total_month-1
+            }
+            else if(cm==2&cy%4==0){
+                total_days=total_days+28
+                total_month=total_month-1
+            }
+            else{
+                total_days=total_days+30
+                total_month=total_month-1
+            }
+        }
+       
+       
+      
+    </script>
+</body>
+</html>

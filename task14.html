@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function checkValuesandAdd(value1,value2) {
+            if (isNaN(value1) || isNaN(value2)) {
+                return "Invalid values entered";
+            
+            } else {
+                const sum = parseFloat(value1) + parseFloat(value2)
+                return sum;
+            }
+
+        }
+
+        let v1 = parseFloat(prompt("Enter the first value:"));
+        let v2 = parseFloat(prompt("Enter the second value:"));
+
+        let result = checkValuesandAdd(v1,v2);
+        
+        alert(result)
+     
+    </script>
+</body>
+
+</html>

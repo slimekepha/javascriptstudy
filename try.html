@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function login(){
+            correctemail="admin@mail.com";
+            correctpassword="admin123";
+            maxattempts=3;
+            let attempts=0;
+
+            while(attempts<maxattempts){
+                email=prompt("Enter the email:");
+                password=prompt("Enter the password:");
+
+                if(email==correctemail&&password==correctpassword){
+                    alert("Login is successfull");
+                    return;
+
+                
+                }else if(attempts++){
+                    alert("Invalid password or email");
+                }else{
+                    attempts==maxattempts
+                    alert("Account blocked");
+                }
+            }
+
+        }
+    
+login();
+    </script>
+</body>
+</html>

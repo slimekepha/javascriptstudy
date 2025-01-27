@@ -121,12 +121,12 @@
         }
         payeetax=findthepayee(taxable_income);
 
-        function findTheNetsalary(gross_salary,nhdfcontribution,nhifContribution,nssfcontribution){
+        function findTheNetsalary(gross_salary,nhdfcontribution,nhifContribution,nssfcontribution,payeetax){
             netsalary=gross_salary-(nssfcontribution+nhdfcontribution+nhifContribution+payeetax)
             return netsalary
 
         }
-        netsalary=findTheNetsalary(gross_salary,nhdfcontribution,nhifContribution,nssfcontribution);
+        netsalary=findTheNetsalary(gross_salary,nhdfcontribution,nhifContribution,nssfcontribution,payeetax);
 
     </script>
 </body>

@@ -9,6 +9,8 @@
 
 <body>
     <script>
+        let basicsalary;
+        let benefits;
         let gross_salary;
         let nhifContribution;
         let nssfcontribution;
@@ -17,11 +19,22 @@
         let payeetax;
 
 
-        function findnhifcontribution() {
-            let basicsalary = parseFloat(prompt("Enter your basic salary:"));
-            let benefits = parseFloat(prompt("Enter your benefits:"));
+        function calculateGrossSalary(basicsalary, benefits) {
 
             gross_salary = basicsalary + benefits;
+            return gross_salary;
+
+
+        }
+        basicsalary = parseFloat(prompt("Enter your basic salary:"));
+        benefits = parseFloat(prompt("Enter your benefits:"));
+        gross_salary = calculateGrossSalary(basicsalary, benefits);
+
+
+
+
+        function findnhifcontribution(gross_salary) {
+
             if (gross_salary <= 5999) {
                 nhifContribution = 150;
             } else if (gross_salary <= 7999) {
@@ -57,37 +70,39 @@
             } else {
                 nhifContribution = 1700;
             }
-            console.log(nhifContribution);
+            return nhifContribution;
+
         }
-        findnhifcontribution();
+        nhifContribution = findnhifcontribution(gross_salary);
 
 
-        function findnssfcontribution() {
+        function findnssfcontribution(gross_salary) {
             if (gross_salary > 18000) {
                 nssfcontribution = 0.06 * 18000;
             } else {
                 nssfcontribution = 0.06 * gross_salary;
             }
-            console.log(nssfcontribution);
+            return nssfcontribution;
         }
-        findnssfcontribution();
+        nssfcontribution = findnssfcontribution(gross_salary);
 
 
-        function findnhdfcontribution() {
+        function findnhdfcontribution(gross_salary) {
             nhdfcontribution = gross_salary * 0.015;
-            console.log(nhdfcontribution);
+            return nhdfcontribution;
+
         }
-        findnhdfcontribution();
+        nhdfcontribution = findnhdfcontribution(gross_salary);
 
 
-        function findthetaxableincome() {
+        function findthetaxableincome(gross_salary, nssfcontribution, nhifContribution, nhdfcontribution) {
             taxable_income = gross_salary - (nssfcontribution + nhifContribution + nhdfcontribution);
-            console.log(taxable_income);
+            return taxable_income;
         }
-        findthetaxableincome();
+        taxable_income = findthetaxableincome(gross_salary, nssfcontribution, nhifContribution, nhdfcontribution);
 
-        function findthepayee(){
-            
+        function findthepayee() {
+
         }
 
     </script>

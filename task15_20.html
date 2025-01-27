@@ -117,16 +117,16 @@
             }
             payeetax -= personal_relief;
             return payeetax;
-            
-        }
-        payeetax=findthepayee(taxable_income);
 
-        function findTheNetsalary(gross_salary,nhdfcontribution,nhifContribution,nssfcontribution,payeetax){
-            netsalary=gross_salary-(nssfcontribution+nhdfcontribution+nhifContribution+payeetax)
+        }
+        payeetax = findthepayee(taxable_income);
+
+        function findTheNetsalary(gross_salary, nhdfcontribution, nhifContribution, nssfcontribution, payeetax) {
+            netsalary = gross_salary - (nssfcontribution + nhdfcontribution + nhifContribution + payeetax)
             return netsalary
 
         }
-        netsalary=findTheNetsalary(gross_salary,nhdfcontribution,nhifContribution,nssfcontribution,payeetax);
+        netsalary = findTheNetsalary(gross_salary, nhdfcontribution, nhifContribution, nssfcontribution, payeetax);
 
     </script>
 </body>

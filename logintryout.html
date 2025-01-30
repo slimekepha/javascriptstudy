@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="errorid" style="color: red;"></p>
+    <form id="formid">
+        <label for="email">Enter your Email:</label>
+        <input type="text" id="emailid" name="emailid">
+
+        <label for="password">Enter the Password:</label>
+        <input type="text" id="passwordid" name="passwordid">
+
+        <input type="submit" id="submitid" value="Login">
+        
+        <script>
+            let email=document.getElementById("emailid");
+            let password=document.getElementById("passwordid");
+            let submitbutton=document.getElementById("submitid");
+            let form=document.getElementById("formid");
+            let error=document.getElementById("errorid");
+            let attempts=0;
+            let maxAttempts=5;
+
+
+            email.addEventListener("input", function(event){
+                let emailValue=event.target.value.trim();
+                console.log("typed email" + emailValue);
+
+                if(emailValue===''){
+                    error.innerHTML="Email field is Empty";
+                    submitbutton.disabled=true;
+                }else if(emailValue!=="admin@mail.com"){
+                    error.innerHTML="Invalid Email Address";
+                    submitbutton.disabled=true;
+                }else{
+                    error.innerHTML='';
+                    validateInputs();
+
+                }
+
+
+
+
+
+            });
+
+            password.addEventListener("input", function(event){
+                let passwordValue=event.target.value.trim();
+                console.log("Typed password" + passwordValue);
+
+                if(passwordValue===''){
+                    error.innerHTML="Password field is empty";
+                    submitbutton.disabled=true;
+                }else if(passwordValue!=="Pass123"){
+                    error.innerHTML="Invalid Password";
+                    submitbutton.disabled=true;
+                }else{
+                    error.innerHTML='';
+                    validateInputs();
+                }
+
+
+
+
+            });
+
+            function validateInputs(){
+                let emailValue=email.value.trim();
+                let passwordValue=password.value.trim();
+
+                if(emailValue==='admin@mail.com'&& passwordValue==="Pass123"){
+                    submitbutton.disabled=false;
+                }else{
+                    submitbutton.disabled=true;
+                }
+            }
+
+            form.addEventListener("submit", function(event){
+                event.preventDefault();
+                let emailValue=email.value.trim();
+                let passwordValue=password.value.trim();
+
+                if(emailValue==="admin@mail.com"&&passwordValue==="Pass123"){
+                    window.location.href="triangle_calculator.html";
+                }else{
+                    attempts++;
+                    if(attempts>=maxAttempts){
+                        error.innerHTML="Too many attempts,Page blocked";
+                        form.style.display='none'
+                    }else{
+                        error.innerHTML="Invalid Credentials"
+                    }
+
+                }
+
+
+
+
+
+
+
+            });
+
+            
+
+
+
+
+        </script>
+    </form>
+</body>
+</html>
